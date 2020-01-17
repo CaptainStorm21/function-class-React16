@@ -12,22 +12,29 @@ class App extends Component {
       { name: 'Joseph', age: '34'}
     ]
   }
+  //function onclick event handler
+  switchNameHandler = () => {
+    console.log('was clicked');
+  }
 
   render() {
     return (
       <div className="App">
         <h1>I am React App</h1>
- 
+
+        {/* event handling */}
+        {/* //pass a reference to click event */}
+        <button onClick = { this.switchNameHandler}>Switch the name</button>
+
+        {/* this will execute a function immediately after the component will load into the dom */}
+        {/* <button onClick = { this.switchNameHandler()}>Switch the name</button> */}
+
         <Person name= { this.state.persons[0].name} age= { this.state.persons[0].age}  />
         <Person name="Joseph" age="37">
           My hobbies are : Racing and Skiing
         </Person>
-        {/* <Person name="Joseph" age="37"> My hobbies are : Racing and Skiing </Person> */}
       </div>
     );
-
-    //this is what JSX IS
-    // return React.createElement ('div', null, 'h1', "I am React App")
   }
 }
 export default App;
