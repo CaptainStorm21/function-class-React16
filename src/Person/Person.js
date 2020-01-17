@@ -1,19 +1,13 @@
-import React from "react";
+import React from 'react';
 
-//function name with lower captionSide
-const person = props => {
-  return (
-    <div>
-      {/*  return */}
-      {/* <p> I m a Person. I am {Math.floor(Math.random() * 30)} years old. </p >  */}
-      <p>
-        I m a {props.name}. I am {props.age}years old.
-      </p>
-      <p>
-        {/* outputting children of props */} {props.children}
-      </p>
-    </div>
-  );
+const person = ( props ) => {
+    return (
+        <div>
+            <p onClick={props.click}>I'm {props.name} and I am {props.age} years old!</p>
+            <p>{props.children}</p>
+            <input type="text" onChange={props.changed} value={props.name} />
+        </div>
+    )
 };
 
 export default person;
