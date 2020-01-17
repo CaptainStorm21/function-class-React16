@@ -8,13 +8,24 @@ class App extends Component {
     persons:  [
       { name: 'Alfred', age: '23'},
       { name: 'Karine', age: '11'},
-      { name: 'Masha', age: '55'},
-      { name: 'Joseph', age: '34'}
-    ]
+      { name: 'Sebastian ', age: '41'}
+    ],
+    otherState: 'California - other state'
   }
   //function onclick event handler
   switchNameHandler = () => {
-    console.log('was clicked');
+    // manipulating change state on a click
+    //DON'T DO THIS = this.state.persons[0].name="Marina Schiller"
+    this.setState(
+      {
+        persons:  [
+          { name: 'Alina', age: '83'},
+          { name: 'Sascha', age: '93'},
+          { name: 'Sebastian ', age: '41'}
+        ]
+      }
+    )
+
   }
 
   render() {
@@ -22,14 +33,15 @@ class App extends Component {
       <div className="App">
         <h1>I am React App</h1>
 
-        {/* event handling */}
-        {/* //pass a reference to click event */}
+
         <button onClick = { this.switchNameHandler}>Switch the name</button>
 
-        {/* this will execute a function immediately after the component will load into the dom */}
-        {/* <button onClick = { this.switchNameHandler()}>Switch the name</button> */}
-
+        <h3>Dynamically inserted</h3>
         <Person name= { this.state.persons[0].name} age= { this.state.persons[0].age}  />
+        <Person name= { this.state.persons[1].name} age= { this.state.persons[1].age}  />
+        <Person name= { this.state.persons[2].name} age= { this.state.persons[2].age}  />
+
+        <h3>Manually inserted</h3>
         <Person name="Joseph" age="37">
           My hobbies are : Racing and Skiing
         </Person>
