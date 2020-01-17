@@ -10,7 +10,7 @@ class App extends Component {
       { name: 'Karine', age: '11'},
       { name: 'Masha', age: '55'},
       { name: 'Joseph', age: '34'}
-    ]
+    ]``
   }
 
   render() {
