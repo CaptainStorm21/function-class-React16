@@ -1,0 +1,24 @@
+h1, p {
+  font-family: Lato;
+}
+
+.background{
+  background-color: lightblue;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+
+.background2{
+  background-color: lightgray;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.background3{
+  background-color: lightgreen;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
