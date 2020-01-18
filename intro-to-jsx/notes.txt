@@ -1,0 +1,3 @@
+intro to jxs 
+simple function and class components
+else if examples added
