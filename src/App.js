@@ -6,7 +6,7 @@ import Header from "./2-prop-to-component/Header";
 import DidMount from './3-componentDidMount/DidMount';
 
 import Footer from './Footer/Footer';
-import Content from './Content/Content';
+// import Content from './Content/Content';
 
 export class App extends Component {
   constructor(props) {
@@ -20,17 +20,20 @@ export class App extends Component {
     return (
       <div className="App">
         <header className="bg-dark App-header">
-          <h4 className="text-white text-center p-2">
+          <Header/>
+          {/* <h4 className="text-white text-center p-2">
             {this.state.userName} 
             <Header title="React 16" />
-          </h4>
+          </h4> */}
         </header>
 
         {/* content */}
-        <Content>
+        {/* <Content> */}
+        <div>
           <Home/>
           <DidMount/>
-        </Content>
+        </div>
+        {/* </Content> */}
 
         {/* Footer */}
         <Footer />

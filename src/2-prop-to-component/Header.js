@@ -1,23 +1,20 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-class Header extends Component {
-  // Here you can define your PropTypes.
-  static propTypes = {
-    title: PropTypes.string.isRequired,
-  };
+const Header = props =>{
+  const {
+    title = "Welcome to React"
+  } = props;
 
-  render() {
-    const { 
-      title = "REACT" 
-    } = this.props;
+  return (
+    <header className="App-header">
+      <h3 className = "App-title"> { title } </h3>
+    </header>
+  );
+};
 
-    return (
-      <header>
-        <h1 >{title}</h1>
-      </header>
-    );
-  }
-}
+Header.propTypes = {
+  title: PropTypes.string.isRequired
+};
 
 export default Header;
