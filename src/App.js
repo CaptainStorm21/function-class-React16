@@ -1,59 +1,41 @@
-import React, { Component } from 'react';
-import './App.css';
-import Person from './Person/Person';
+import React, { Component } from "react";
+import "./App.css";
 
-class App extends Component {
-  state = {
-    persons: [
-      { name: 'Max', age: 28 },
-      { name: 'Morgan', age: 29 },
-      { name: 'Stephanie', age: 26 }
-    ],
-    otherState: 'some other value'
+import Home from "./1-first-component/Home";
+import Header from "./2-prop-to-component/Header";
+import DidMount from './3-componentDidMount/DidMount';
+
+import Footer from './Footer/Footer';
+import Content from './Content/Content';
+
+export class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userName: "Learning"
+    };
   }
 
-  switchNameHandler = (newName) => {
-    // console.log('Was clicked!');
-    // DON'T DO THIS: this.state.persons[0].name = 'Maximilian';
-    this.setState( {
-      persons: [
-        { name: newName, age: 28 },
-        { name: 'Manuel', age: 29 },
-        { name: 'Margarite', age: 27 }
-      ]
-    } )
-  }
-
-  nameChangedHandler = (event) => {
-    this.setState( {
-      persons: [
-        { name: 'Max', age: 28 },
-        { name: event.target.value, age: 29 },
-        { name: 'Stephanie', age: 26 }
-      ]
-    } )
-  }
-
-  render () {
+  render() {
     return (
       <div className="App">
-        <h1>Hi, I'm a React App</h1>
-        <p>This is really working!</p>
-        <button onClick={() => this.switchNameHandler('Josephine')}>Switch Name</button>
-        <Person 
-          name={this.state.persons[0].name} 
-          age={this.state.persons[0].age} />
-        <Person 
-          name={this.state.persons[1].name} 
-          age={this.state.persons[1].age}
-          click={this.switchNameHandler.bind(this, 'Yoseline!')}
-          changed={this.nameChangedHandler} >My Hobbies: Racing</Person>
-        <Person 
-          name={this.state.persons[2].name} 
-          age={this.state.persons[2].age} />
+        <header className="bg-dark App-header">
+          <h4 className="text-white text-center p-2">
+            {this.state.userName} 
+            <Header title="React 16" />
+          </h4>
+        </header>
+
+        {/* content */}
+        <Content>
+          <Home/>
+          <DidMount/>
+        </Content>
+
+        {/* Footer */}
+        <Footer />
       </div>
     );
-    // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
   }
 }
 
